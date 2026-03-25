@@ -118,8 +118,15 @@ app.get("*", (req, res) => {
 });
 
 // ─── Start ────────────────────────────────────────────────────────────────────
-const server = app.listen(PORT, () => {
-  console.log(`🗳️  Voting App running on http://localhost:${PORT}`);
-});
+// const server = app.listen(PORT, () => {
+//   console.log(`🗳️  Voting App running on http://localhost:${PORT}`);
+// });
+
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`🗳️  Voting App running on http://localhost:${PORT}`);
+  });
+}
+
 
 module.exports = { app, polls, voters }; // exported for tests

@@ -14,4 +14,4 @@ WORKDIR /app
 
 COPY --from=builder /app .
 
-CMD ["npm" ,"run" ,"dev"]
+CMD ["node" ,"server.js"]
